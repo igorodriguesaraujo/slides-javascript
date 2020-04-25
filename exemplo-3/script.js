@@ -23,7 +23,6 @@ function enableControl(target) {
 // Próximo slide
 function nextSlide() {
   enableControl(prevControl);
-
   if (currentImage >= maxImage - 1) {
     disableControl(nextControl);
   } else {
@@ -38,7 +37,6 @@ function nextSlide() {
 // Slider Anterior
 function prevSlide() {
   enableControl(nextControl);
-
   if (currentImage <= 0) {
     disableControl(prevControl);
     currentImage = 0;
@@ -53,7 +51,6 @@ function prevSlide() {
 
 // Eventos
 nextControl.addEventListener('click', nextSlide);
-
 prevControl.addEventListener('click', prevSlide);
 
 
