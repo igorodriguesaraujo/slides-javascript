@@ -1,36 +1,36 @@
 const slides = document.querySelector('#slide');
 const nextControl = document.querySelector('#nextControl');
 const prevControl = document.querySelector('#prevControl');
-
-let count = 0;
 const parent = slides.parentElement;
 
-function controlToggle(selector, count, limit, position) {
-  if (count >= limit) {
-    // selector.style.display = "none";
-    parent.style.transform = `translateX(0px)`;
-    count = 0;
-  }
-}
+let count = 0;
+let limit = Math.ceil(slides.scrollWidth / slides.clientWidth);
 
+// Next Slide
 function nextSlide() {
   count++;
-
-  let limit = Math.ceil(slides.scrollWidth / slides.clientWidth);
   let position = slides.clientWidth * count;
 
   parent.style.transform = `translateX(-${position}px)`;
 
   if (count >= limit) {
-    // selector.style.display = "none";
     parent.style.transform = `translateX(0px)`;
     count = 0;
   }
-  console.log("contador:", count);
+  console.log("contador:", count)
 }
 
+// Previous Slide
 function prevSlide() {
-  console.log('Slide anterior');
+  if (count <= 0) {
+    console.log('Estamos no inicio')
+  } else {
+    count--;
+    let position = slides.clientWidth * count;
+    parent.style.transform = `translateX(-${position}px)`;
+  }
+  console.log("contador:", count <= 0)
+
 }
 
 nextControl.addEventListener('click', nextSlide);

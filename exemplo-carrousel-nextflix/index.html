@@ -5,9 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Exemplo | Carousel netflix</title>
   <link rel="stylesheet" href="./style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 </head>
 <body>
-  <h1>Carousel Food</h1>
+
+<h2 class="title">Pratos</h2>
+
+<div class="container">
+  <h2 class="title title--small title--left">
+    <i class="fas fa-utensils" style="margin-right: 5px; color: white;"></i>
+    Receitas recentes
+  </h2>
+</div>
+
+<div id="slide-wrap">
+  
+  <!-- Slides -->
   <div id="slide-wrapper">
     <div id="slide">
       <div class="slide-item">
@@ -79,13 +93,23 @@
       <div class="slide-item">
         <img src="./images/image05.jpg" alt="imagem">
       </div>
-
+      <div class="slide-item">
+        <img src="./images/image03.jpg" alt="imagem">
+      </div>
+      <div class="slide-item">
+        <img src="./images/image04.jpg" alt="imagem">
+      </div>
     </div>
   </div>
-  <div class="control">
-    <button id="prevControl">Anterior</button>
-    <button id="nextControl">Próximo</button>
+  
+  <!-- Control Next/Previuos -->
+  <div class="controls">
+    <button class="control control-prev" id="prevControl"><i class="fas fa-chevron-left"></i></button>
+    <button class="control control-next" id="nextControl"><i class="fas fa-chevron-right"></i></button>
   </div>
+
+</div>
+
   <script src="./script.js"></script>
 </body>
 </html>
