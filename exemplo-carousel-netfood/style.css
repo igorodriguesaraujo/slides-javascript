@@ -61,29 +61,16 @@ div.slide-item {
   min-width: 245px;
   height: 150px;
   cursor: pointer;
-  transition: transform ease 300ms;
-}
-div.slide-item:hover img{
-  transform:scale(1.2);
+  transition: all ease 400ms;
 }
 div.slide-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: all ease 300ms;
 }
 
 /* ------ ----- Control ------ ----- */
-.control,
-.controls {
-  position: absolute;
-}
-.controls {
-  width: 100%;
-  height: 150px;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
 .control {
   position: absolute;
   top: 50%;
