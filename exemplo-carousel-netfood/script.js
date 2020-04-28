@@ -30,34 +30,38 @@ function prevSlide() {
 }
 // Scale Image
 function scaleImage() {
-  let image = slides.children;
+  let current = slides.children;
 
-  for (let i = 0; i <= image.length; i++) {
-    image[i].addEventListener("mouseover", (event) => {
+  for (let i = 0; i <= current.length; i++) {
+
+    let next = i + 1;
+    let previous = i - 1;
+
+    current[i].addEventListener("mouseover", (event) => {
       if (i === 0) {
         event.currentTarget.style.transform = "scale(1.3)";
-        image[i + 1].style.marginLeft = "38px";
-      } else if (i >= image.length - 1) {
+        current[next].style.marginLeft = "38px";
+      } else if (i >= current.length - 1) {
         event.currentTarget.style.transform = "scale(1.3)";
-        image[i - 1].style.marginRight = "43px";
+        current[previous].style.marginRight = "43px";
       } else {
-        image[i - 1].style.marginRight = "43px";
+        current[previous].style.marginRight = "43px";
         event.currentTarget.style.transform = "scale(1.3)";
-        image[i + 1].style.marginLeft = "38px";
+        current[next].style.marginLeft = "38px";
       }
     })
 
-    image[i].addEventListener("mouseleave", (event) => {
+    current[i].addEventListener("mouseleave", (event) => {
       if (i === 0) {
         event.currentTarget.style.transform = "scale(1)";
-        image[i + 1].style.marginLeft = "0px";
-      } else if (i >= image.length - 1) {
+        current[next].style.marginLeft = "0px";
+      } else if (i >= current.length - 1) {
         event.currentTarget.style.transform = "scale(1)";
-        image[i - 1].style.marginRight = "5px";
+        current[previous].style.marginRight = "5px";
       } else {
-        image[i - 1].style.marginRight = "5px";
+        current[previous].style.marginRight = "5px";
         event.currentTarget.style.transform = "scale(1)";
-        image[i + 1].style.marginLeft = "0px";
+        current[next].style.marginLeft = "0px";
       }
 
     })
