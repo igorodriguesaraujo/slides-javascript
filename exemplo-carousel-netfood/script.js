@@ -28,7 +28,7 @@ function prevSlide() {
 }
 
 // Scale Image
-function scaleImage() {
+function mouseScaleImage() {
   let current = slides.children;
 
   for (let i = 0; i <= current.length; i++) {
@@ -77,5 +77,5 @@ nextControl.addEventListener('click', nextSlide);
 prevControl.addEventListener('click', prevSlide);
 
 window.addEventListener("load", () => {
-  scaleImage()
+  mouseScaleImage()
 });
