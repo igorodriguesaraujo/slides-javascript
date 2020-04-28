@@ -29,7 +29,7 @@ function prevSlide() {
   }
 }
 // Scale Image
-function handleMouseOver() {
+function scaleImage() {
   let image = slides.children;
 
   for (let i = 0; i <= image.length; i++) {
@@ -68,5 +68,5 @@ nextControl.addEventListener('click', nextSlide);
 prevControl.addEventListener('click', prevSlide);
 
 window.addEventListener("load", () => {
-  handleMouseOver()
+  scaleImage()
 });
